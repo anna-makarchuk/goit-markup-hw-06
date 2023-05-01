@@ -407,11 +407,10 @@ body {
 }
 .footer-container {
   display: flex;
-  gap: 120px;
   align-items: baseline;
 }
 .footer-container-logo {
-  gap: 120px;
+  margin-right: 120px;
 }
 .socials-footer {
   display: flex;
@@ -428,6 +427,81 @@ body {
 .footer-link:hover,
 .footer-link:focus {
   background-color: var(--green);
+}
+
+/* Footer form */
+.footer-subscribe {
+  margin-left: 80px;
+}
+
+.footer-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 24px;
+}
+.footer-subscribe-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--white);
+
+  margin-bottom: 16px;
+}
+.footer-subscribe-label {
+  display: flex;
+  align-items: center;
+  width: 40px;
+  height: 18px;
+
+  position: absolute;
+
+  font-size: 12px;
+  line-height: 2px;
+  letter-spacing: 0.04em;
+
+  color: var(--white);
+  background-color: var(--navy-blue);
+  border: 1px solid var(--navy-blue);
+
+  transform: translateY(50%) translateX(16px);
+
+  transition: transform var(--anim-fast);
+}
+
+.footer-subscribe-input {
+  width: 264px;
+  height: 40px;
+  font-size: 12px;
+
+  background-color: var(--navy-blue);
+  border: 1px solid #ffffff;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  color: var(--white);
+}
+.footer-subscribe-input:focus + .footer-subscribe-label {
+  transform: translateY(-10px) translateX(16px);
+}
+.footer-subscribe-input:not(:placeholder-shown) + .footer-subscribe-label {
+  transform: translateY(-10px) translateX(16px);
+}
+.footer-subscribe-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  min-height: 40px;
+  transition: background-color var(--anim-fast), border-color var(--anim-fast);
+}
+
+.footer-subscribe-btn:hover,
+.footer-subscribe-btn:focus {
+  background-color: var(--ocean);
+  border-color: var(--ocean);
 }
 /* portfolio */
 .portfolio {
@@ -543,9 +617,6 @@ body {
   transform: translateY(0);
 }
 
-/* .portfolio-items-item:focus .overlay {
-  transform: translateY(0);
-} */
 /* Modal styles */
 
 .backdrop {
@@ -600,6 +671,7 @@ body {
 .modal-btn:hover,
 .modal-btn:focus {
   background-color: var(--ocean);
+  border-color: var(--ocean);
 }
 
 .modal-icon {
@@ -630,7 +702,6 @@ body {
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.04em;
-  color: var(--light-slate);
 }
 .modal-form-field {
   position: relative;
@@ -686,12 +757,17 @@ body {
 .modal-send-btn {
   display: block;
   margin: 0 auto;
+  transition: background-color var(--anim-fast), border-color var(--ocean);
+}
+.modal-send-btn:hover,
+.modal-send-btn:focus {
+  background-color: var(--ocean);
+  border-color: var(--ocean);
 }
 .modal-form-agreement {
   display: flex;
   align-items: center;
-  gap: 8px;
-  justify-content: center;
+  justify-content: start;
 
   margin-bottom: 24px;
 }
@@ -701,8 +777,12 @@ body {
   line-height: 1.16;
   letter-spacing: 0.04em;
   text-align: center;
+  margin-left: 8px;
 
   color: var(--light-slate);
+}
+.modal-form-agreement-link {
+  color: var(--iris);
 }
 .modal-form-agreement-box {
   appearance: none;
